@@ -1,9 +1,9 @@
 <?php
-$peso =  strip_tags($_POST["peso"]);
-$altura = strip_tags($_POST["altura"]);
-$Feminino = strip_tags($_POST["Feminino"]);
-$Masculino = strip_tags($_POST["Masculino"]);
-$outro = strip_tags($_POST['outro']);
+$peso = $_POST["peso"];
+$altura = $_POST["altura"];
+$Feminino = $_POST["Feminino"];
+$Masculino = $_POST["Masculino"];
+$outro = $_POST['outro'];
 
 $valor_imc = calculaIMC($peso, $altura);
 
@@ -53,7 +53,7 @@ function classificaIMC($imc)
 <body>
 
 
-<form action="./index.html" method="post">
+<form action="/index.html" method="post">
 
 <img src="./img/imagemIMC.jpeg" width="360" height="250">
 
@@ -68,7 +68,7 @@ function classificaIMC($imc)
         <hr>
 </div>
 
-<?php if($Feminino == 'on' | $Masculino == 'on' | $outro == 'on'): ?>
+<?php if($Feminino == 'Feminino' || $Masculino == 'Masculino' || $outro == 'outro'): ?>
     <div class="checkbox">
        <p><b> Sexo: </b><?php echo "Masculino: " . $Masculino;?></p>
        <p><b> Sexo: </b><?php echo "Feminino: " . $Feminino;?></p>
@@ -77,6 +77,11 @@ function classificaIMC($imc)
 <?php else: ?>
     <h3>Não foi informado o sexo</h3>
 <?php endif;?>
+
+<?php
+    echo "<h1>Docker + PHP funcionando 🚀</h1>";
+    echo "<p>Data atual: " . date("d/m/Y H:i:s") . "</p>";
+?> 
 
  <div class="button">
      <button type="submit" class="btn btn-success">INICIO</button>
