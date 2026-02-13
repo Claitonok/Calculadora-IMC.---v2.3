@@ -1,9 +1,25 @@
-FROM php:8.2-apache
+FROM nginx:alpine
 
-COPY . /var/www/html/
+# Remove configuração padrão (opcional)
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copia os arquivos para a pasta do Nginx
+COPY . /usr/share/nginx/html/
+
+# Expõe a porta 80
+EXPOSE 80
+
+
+
+
+
+
+# FROM php:8.2-apache
+
+##COPY . /var/www/html/
 
 # Expose port 9000 and start php-fpm server
-EXPOSE 80
+#EXPOSE 80
 
 #NOME DA IMAGEM: "calcular-imc"
 
@@ -12,4 +28,4 @@ EXPOSE 80
 #SIGNIFICA QUE O CONTEXTO DE CONSTRUÇÃO É O DIRETÓRIO ATUAL, 
 #ONDE ESTÁ LOCALIZADO O DOCKERFILE.
 
-#        ---->>> docker build -t calcular-imc .  <<<----
+#  ---->>> docker build -t calcular-imc .  <<<----

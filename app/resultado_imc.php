@@ -1,9 +1,9 @@
 <?php
-$peso = $_POST["peso"];
-$altura = $_POST["altura"];
-$Feminino = $_POST["Feminino"];
-$Masculino = $_POST["Masculino"];
-$outro = $_POST['outro'];
+$peso = $_POST["peso"] ? $_POST["peso"] : 0;
+$altura = $_POST["altura"] ? $_POST["altura"] : 0;
+$Feminino = $_POST["Feminino"] ? $_POST["Feminino"] : "";
+$Masculino = $_POST["Masculino"] ? $_POST["Masculino"] : "";
+$outro = $_POST['outro'] ? $_POST['outro'] : "";
 
 $valor_imc = calculaIMC($peso, $altura);
 
@@ -53,7 +53,7 @@ function classificaIMC($imc)
 <body>
 
 
-<form action="/index.html" method="post">
+<form action="/" method="post">
 
 <img src="./img/imagemIMC.jpeg" width="360" height="250">
 
@@ -68,11 +68,18 @@ function classificaIMC($imc)
         <hr>
 </div>
 
-<?php if($Feminino == 'Feminino' || $Masculino == 'Masculino' || $outro == 'outro'): ?>
+<?php if($Masculino == 'Masculino'): ?>
     <div class="checkbox">
-       <p><b> Sexo: </b><?php echo "Masculino: " . $Masculino;?></p>
-       <p><b> Sexo: </b><?php echo "Feminino: " . $Feminino;?></p>
-       <p><b> Sexo: </b><?php echo "LGBTQIA+: " . $outro;?></p>
+        <p><b> Sexo: </b><?php echo $Masculino;?></p>
+    </div>
+
+<?php elseif($Feminino == 'Feminino'): ?>
+    <div class="checkbox">
+       <p><b> Sexo: </b><?php echo $Feminino;?></p>
+    </div>
+<?php elseif($outro == 'outro'): ?>
+    <div class="checkbox">
+        <p><b> Sexo: </b><?php echo $outro;?></p>
     </div>
 <?php else: ?>
     <h3>Não foi informado o sexo</h3>
@@ -85,6 +92,7 @@ function classificaIMC($imc)
 
  <div class="button">
      <button type="submit" class="btn btn-success">INICIO</button>
+         <a href="/">Baixe a formula do IMC</a>
  </div>
 
  <div class="formula">
