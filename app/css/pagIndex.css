@@ -128,6 +128,20 @@ button:hover{
 .sobrepeso{ background:#ffeeba; color:#856404;}
 .obesidade{ background:#f8d7da; color:#721c24;}
 
+
+.rodape{
+    background-color: var(--cor-footer);
+    color: var(--cor-link);
+    text-align: center;
+    padding: 20px;
+}
+.rodape a{
+    color: var(--cor-link);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
 /* RESPONSIVO */
 @media(max-width:420px){
     .container{
