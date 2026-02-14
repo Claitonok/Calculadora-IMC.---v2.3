@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="ICON" type="ICON" sizes="16x16" href="./app/img/Calculator_31111.ico">
-    <!-- <link rel="stylesheet" href="./css/principal.css"> -->
-    <link rel="stylesheet" href="./app/css/pagIndex.css">
-    <title>Calculadora de IMC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="ICON" type="ICON" sizes="16x16" href="./app/img/Calculator_31111.ico">
+
+<link rel="stylesheet" href="./app/css/pagIndex.css">
+<title>Calculadora de IMC</title>
 </head>
-<script type="text/javaScript" src="./app/script.js" defer></script>
+
+<script type="text/JavaScript" src="./app/script.js" defer></script>
 
 <body>
+    	<header>
+		<div id="cabecalho">
+			<img width="50" height="50"  style="border-radius: 50%" src="./app/img/imagemIMC.jpeg" alt="imagem imc">
+			<h4>Hospedagem ♾️ Home ♾️ Page</h4>
+				<a href="" target="_blank" rel="noopener noreferrer"><button
+						class="btn btn-dark">Informações</button></a>
+		
+		</div>
+	</header>
 
-    <header>
-        <a href="http://"></a>
-    </header>
+<main>
 
-    <form class="row g-3 needs-validation" novalidate>
-
-            <img src="./app/img/imagemIMC.jpeg" width="360" height="250">
-
-            <h2>Calcular - IMC</h2>
-
-            <div class="cabeca">
-                <label for="peso">Peso (kg):</label>
-                <input type="number" min="0" name="peso" id="peso" placeholder="Informe seu peso" required>
-                <label for="altura">Altura (m):</label>
-                <input type="number" min="0.1" step="0.01" name="altura" id="altura" placeholder="Informe a sua altura" required>
-            </div>
-            
-            <div class="checkbox">
-                Feminino: <input type="checkbox" name="Feminino" value="Feminino"> | Masculino: <input type="checkbox" name="Masculino" value="Masculino"> | LGBTQIA+: <input type="checkbox" name="outro" value="outro">
-            </div>
+    <div class="container">
+        <h2>Calculadora de IMC</h2>
     
-             <div class="button">
-                 <button type="submit" class="btn btn-success">Calcular</button>
-                 <button type="reset" class="btn btn-danger">DELETAR</button>
-             </div>
+        <div class="input-group">
+            <label>Peso (kg)</label>
+            <input type="number" id="peso" placeholder="Ex: 70">
+        </div>
+    
+        <div class="input-group">
+            <label>Altura (m)</label>
+            <input type="number" step="0.01" id="altura" placeholder="Ex: 1.75">
+        </div>
+    
+        <button onclick="calcularIMC()">Calcular IMC</button>
+    
+        <div id="resultado" class="resultado"></div>
+    </div>
 
-             <div class="formula">
-                <!-- MANEIRA DE BAIXAR UM ARQUIVO NO COMPUTADOR -->
-                <a href="./app/img/Formula do IMC.jpeg" download="formula">Baixe a formula do IMC</a>
-             </div>
-             
-        </form>
+</main>
 
+<footer>
     <div class="rodape">
-        <a href="https://github.com/Claitonok/Calculadora-IMC"><img src="./app/img/github_original_wordmark_logo_icon_146506.ico"  width="50" height="50"></a>
-    </div> 
+        <a href="https://www.google.com" target="_blank">Google</a>
+        <a href="https://github.com/Claitonok/Calculadora-IMC.---v2.3" target="_blank">GitHub<img src="./app/img/github_original_wordmark_logo_icon_146506.ico"  width="40" height="40"></a>
+        <a href="https://www.stackoverflow.com" target="_blank">Stack Overflow</a>
+    </div>
+</footer>
 
 </body>
 </html>
