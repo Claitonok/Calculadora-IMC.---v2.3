@@ -158,8 +158,28 @@ canvas{
 }
 
 /* RESPONSIVO */
-@media(max-width:420px){
+@media(max-width:760px){
     .container{
         width:90%;
     }
+    #cabecalho {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: sans-serif;
+    padding: 15px;
+    background-color: var(--color-azul3);
+    color: var(--cor-link);
+    box-shadow: 05px 05px 05px 05px rgb(66, 74, 191);
+}
+/* Formatação do ícone do header */
+#cabecalho > img {
+    width: 40px;
+    height: 40px;
+}
+
+#cabecalho > h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 }
