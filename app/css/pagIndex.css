@@ -29,12 +29,12 @@
 }
 /* Formatação do ícone do header */
 #cabecalho > img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 90px;
 }
 
-#cabecalho > h4 {
-    font-size: 20px;
+#cabecalho > h1 {
+    font-size: 40px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
