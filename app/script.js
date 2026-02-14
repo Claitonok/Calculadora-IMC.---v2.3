@@ -1,3 +1,21 @@
+let ctx = document.getElementById('graficoIMC').getContext('2d');
+
+let dadosIMC = JSON.parse(localStorage.getItem("imcHistorico")) || [];
+
+let grafico = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: dadosIMC.map((_, i) => "IMC " + (i+1)),
+        datasets: [{
+            label: 'Histórico IMC',
+            data: dadosIMC,
+            borderColor: '#4e73df',
+            backgroundColor: 'rgba(78,115,223,0.2)',
+            tension: 0.3,
+            fill:true
+        }]
+    }
+});
 
 function calcularIMC(){
     let peso = parseFloat(document.getElementById("peso").value);
@@ -36,10 +54,43 @@ function calcularIMC(){
         Seu IMC é <strong>${imc.toFixed(2)}</strong><br>
         Classificação: ${classificacao}
     `;
+    salvarHistorico(imc.toFixed(2));
 }
 
-document.querySelector("form").addEventListener("submit", function(event){
+function salvarHistorico(valor){
+    dadosIMC.push(valor);
+    localStorage.setItem("imcHistorico", JSON.stringify(dadosIMC));
+    atualizarGrafico();
+    mostrarHistorico();
+}
+
+function atualizarGrafico(){
+    grafico.data.labels = dadosIMC.map((_, i) => "IMC " + (i+1));
+    grafico.data.datasets[0].data = dadosIMC;
+    grafico.update();
+}
+
+function mostrarHistorico(){
+    let div = document.getElementById("historico");
+    div.innerHTML="";
+    dadosIMC.forEach((valor, index)=>{
+        div.innerHTML += `<p>${index+1}° cálculo: IMC ${valor}</p>`;
+    });
+}
+
+function limparHistorico(){
+    localStorage.removeItem("imcHistorico");
+    dadosIMC=[];
+    atualizarGrafico();
+    mostrarHistorico();
+}
+
+
+
+document.querySelector("button").addEventListener("click", function(event){
     event.preventDefault();
     calcularIMC();
+    atualizarGrafico();
+    mostrarHistorico();
 }
 );

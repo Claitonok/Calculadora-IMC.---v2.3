@@ -1,7 +1,4 @@
 
-@charset "UTF-8";
-@import "tailwindcss";
-
 /* RESET */
 *{
     margin:0;
@@ -65,6 +62,7 @@ main{
 }
 
 h2{
+    text-align:center;
     margin-bottom:20px;
     color:#4e73df;
 }
@@ -104,8 +102,8 @@ button{
     background:#4e73df;
     color:#fff;
     font-weight:bold;
-    font-size:16px;
     cursor:pointer;
+    margin-top:10px;
     transition:0.3s;
 }
 
@@ -116,11 +114,28 @@ button:hover{
 
 /* RESULTADO */
 .resultado{
-    margin-top:20px;
-    padding:15px;
-    border-radius:10px;
+    margin-top:15px;
+    padding:10px;
+    border-radius:8px;
     font-weight:bold;
     display:none;
+}
+canvas{
+    margin-top:20px;
+}
+
+.historico{
+    margin-top:20px;
+    max-height:120px;
+    overflow-y:auto;
+    font-size:14px;
+}
+
+.historico p{
+    background:#f8f9fc;
+    padding:5px;
+    border-radius:5px;
+    margin-bottom:5px;
 }
 
 .normal{ background:#d4edda; color:#155724;}
