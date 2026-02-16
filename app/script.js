@@ -22,7 +22,7 @@ function calcularIMC(){
     let altura = parseFloat(document.getElementById("altura").value);
     let resultado = document.getElementById("resultado");
 
-    if(!peso || !altura){
+    if (peso <= 0 || altura <= 0 || altura > 2.5 || peso > 500 || !peso || !altura) {
         resultado.style.display="block";
         resultado.className="resultado obesidade";
         resultado.innerHTML="⚠️ Preencha todos os campos!";

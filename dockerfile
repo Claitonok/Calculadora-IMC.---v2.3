@@ -34,3 +34,6 @@ EXPOSE 80
 #ONDE ESTÁ LOCALIZADO O DOCKERFILE.
 
 #  ---->>> docker build -t calcular-imc .  <<<----
+
+                                   #Meu-conteiner#
+# -- > docker run -p 8080:80 --name project-docker calcular-imc  <<--
