@@ -45,11 +45,12 @@ main {
     align-items: center;
     flex: 1;
     padding: 30px 15px;
+    /* background: linear-gradient(135deg, #4e73df, #1cc88a); */
 }
 
 /* CARD */
 .container {
-    width: fit-content;
+    width: 100%;
     max-width: 520px;
     padding: 30px;
     border-radius: 20px;
@@ -123,61 +124,33 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* RESULTADO */
-.resultado {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: bold;
-    display: none;
+
+/* QR CODE CARD */
+#qrcode {
+    margin: 0 auto;
+    padding: 25px;
+    width: fit-content;
+    background: var(--card);
+    border-radius: 18px;
+    margin-top: 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.702);
+    opacity: 0;
+    transform: scale(0.9);
 }
 
-canvas {
-    margin-top: 20px;
+/* QR visível */
+#qrcode.show {
+    animation: qrFade 0.6s ease forwards;
 }
 
-.historico {
-    margin-top: 10px;
-    max-height: 120px;
-    overflow-y: auto;
-    font-size: 14px;
+/* ANIMAÇÃO */
+@keyframes qrFade {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.historico p {
-    background: #f8f9fc;
-    padding: 5px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    border-left:5px solid #4e73df;
-}
-/* scrollbar bonita */
-.historico::-webkit-scrollbar{
-width:8px;
-}
-.historico::-webkit-scrollbar-thumb{
-background:#4e73df;
-border-radius:10px;
-}
-
-.normal {
-    background: #d4edda;
-    color: #155724;
-}
-
-.baixo {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.sobrepeso {
-    background: #ffeeba;
-    color: #856404;
-}
-
-.obesidade {
-    background: #f8d7da;
-    color: #721c24;
-}
 
 
 /* FOOTER */
