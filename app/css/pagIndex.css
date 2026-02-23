@@ -182,6 +182,7 @@ border-radius:10px;
 
 /* FOOTER */
 footer {
+    margin-top: 15%;
     text-align: center;
     padding: 15px;
     background-color: #1f2933;
